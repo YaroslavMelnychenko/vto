@@ -115,6 +115,7 @@ img {
 
 .wrapper {
   position: relative;
+  overflow: hidden;
 }
 
 .take {

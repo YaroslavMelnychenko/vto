@@ -4,7 +4,8 @@ var i = 0;
 
 var vt = new VTO({
     canvasId: 'canvas',
-    canvasSize: 'fullscreen',
+    canvasSize: 'auto',
+    debug: true,
     detectCallback: (faceIndex, isDetected) => {
         
     },
@@ -37,7 +38,7 @@ vt.then((instance) => {
     });
 
     window.addEventListener('resize', () => {
-        instance.resize();
+        instance.resize('auto');
     });
 
 });

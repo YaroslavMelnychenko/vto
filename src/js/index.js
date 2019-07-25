@@ -80,6 +80,28 @@ class VTO {
     setCanvasSize() {
         let $this = this;
 
+        var debugSize;
+
+        if(typeof(this.settings.canvasSize) == 'object') {
+
+            this.CANVAS.width = this.settings.canvasSize[0];
+            this.CANVAS.height = this.settings.canvasSize[1];
+
+            debugSize = this.settings.canvasSize[0] + 'x' + this.settings.canvasSize[1];
+
+        } else {
+
+            this.CANVAS.width = window.innerWidth;
+            this.CANVAS.height = window.innerHeight;
+
+            debugSize = 'fullscreen ('+ window.innerWidth + 'x' + window.innerHeight +')';
+
+        }
+
+        if(this.DEBUG) {
+            console.log('%ccanvas current size is - %c' + debugSize, 'color: green;', 'color: orange;');
+        }
+
         return new Promise((resolve) => {
             JeelizResizer.size_canvas({
                 canvasId: $this.settings.canvasId,
@@ -89,27 +111,23 @@ class VTO {
                         console.green('JeelizResizer is ready');
                     }
 
+                    if($this.DEBUG) {
+                        console.log('%cJeelizResizer recommend - %c' + bestVideoSettings.idealWidth + 'x' + bestVideoSettings.idealHeight, 'color: green;', 'color: orange;');
+                    }
+
                     if(isError) {
                         console.error('JeelizResizer throw an error');
                     } else {
                         
                         let videoSettings = {};
 
-                        if(typeof($this.settings.canvasSize) == 'object') {
-
-                            $this.CANVAS.width = $this.settings.canvasSize[0];
-                            $this.CANVAS.height = $this.settings.canvasSize[1];
-
-                        } else if($this.settings.canvasSize == 'fullscreen') {
-
-                            $this.CANVAS.width = window.innerWidth;
-                            $this.CANVAS.height = window.innerHeight;
-
-                        } else {
-
+                        if($this.settings.canvasSize == 'auto') {
                             $this.CANVAS.width = bestVideoSettings.idealWidth;
                             $this.CANVAS.height = bestVideoSettings.idealHeight;
 
+                            if($this.DEBUG) {
+                                console.green('canvas auto sized due to recommendation');
+                            }
                         }
 
                         videoSettings.idealWidth = $this.CANVAS.width;
@@ -117,11 +135,6 @@ class VTO {
                         videoSettings.facingMode = $this.settings.facingMode;
 
                         $this.videoSettings = videoSettings;
-
-                        if($this.DEBUG) {
-                            console.green('canvas sized');
-                        }
-
                     }
                     
                     resolve();
