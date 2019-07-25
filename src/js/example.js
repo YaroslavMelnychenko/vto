@@ -21,12 +21,12 @@ vt.then((instance) => {
 
     var glasses = instance.glassCreator({
         envMapURL: "src/assets/envMap4.jpg",
-        frameMeshURL: "src/assets/models3D/glassesFramesBranchesBent.json",
-        lensesMeshURL: "src/assets/models3D/glassesLenses.json",
+        frameMeshURL: "src/assets/models3D/glassesFramesBranchesBent3.json",
+        lensesMeshURL: "src/assets/models3D/glassesLenses3.json",
         material: new THREE.MeshPhongMaterial({
-            color: 0xff0000,    
+            color: 0x000000,    
             specular: 0x2b2b2b,
-            shininess: 50
+            shininess: 25
         })
     });
 
