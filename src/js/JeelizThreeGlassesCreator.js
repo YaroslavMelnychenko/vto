@@ -9,7 +9,7 @@
        * <string> occluderURL: url of the occluder
 */
 
-const JeelizThreeGlassesCreator=function(spec){
+window.JeelizThreeGlassesCreator=function(spec){
     const threeGlasses=new THREE.Object3D();
     
     //enMap texture
@@ -26,8 +26,8 @@ const JeelizThreeGlassesCreator=function(spec){
         const uniforms=Object.assign(THREE.ShaderLib.basic.uniforms,
             {
                 envMap: {value: textureEquirec},
-                color: {value: new THREE.Color(0xf0f0f0)},
-                uBranchFading: {value: new THREE.Vector2(-90,60)} //first value: position (lower -> to the back), second: transition brutality
+                color: {value: new THREE.Color(0xFFD700)},
+                uBranchFading: {value: new THREE.Vector2(-120,60)} //first value: position (lower -> to the back), second: transition brutality
             });
 
         //tweak vertex shader to give the Z of the current point
@@ -39,13 +39,16 @@ const JeelizThreeGlassesCreator=function(spec){
         const GLSLcomputeAlpha = 'gl_FragColor.a=smoothstep(uBranchFading.x-uBranchFading.y*0.5, uBranchFading.x+uBranchFading.y*0.5, vPosZ);'
         fragmentShaderSource = fragmentShaderSource.replace('#include <fog_fragment>', GLSLcomputeAlpha);
 
-        const mat=new THREE.ShaderMaterial({
+        /* const mat=new THREE.ShaderMaterial({
             vertexShader: vertexShaderSource,
             fragmentShader: fragmentShaderSource,
             uniforms: uniforms,
-            transparent: true
-        });
-        mat.envMap=textureEquirec;
+            transparent: false
+        }); */
+
+        const mat = spec.material;
+
+        /* mat.envMap=textureEquirec; */
         const glassesFramesMesh=new THREE.Mesh(glassesFramesGeometry, mat);
         threeGlasses.add(glassesFramesMesh);
         window.m=mat;
@@ -54,12 +57,14 @@ const JeelizThreeGlassesCreator=function(spec){
     //glasses lenses:
     new THREE.BufferGeometryLoader().load(spec.lensesMeshURL, function(glassesLensesGeometry){
         glassesLensesGeometry.computeVertexNormals();
+
         const mat=new THREE.MeshBasicMaterial({
             envMap: textureEquirec,
-            opacity: 0.7,
-            color: 0x2233aa,
+            opacity: 0.8,
+            color: 0x767E81,
             transparent: true
         });
+        
         window.mat=mat;
         const glassesLensesMesh=new THREE.Mesh(glassesLensesGeometry, mat);
         threeGlasses.add(glassesLensesMesh);

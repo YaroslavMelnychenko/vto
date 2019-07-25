@@ -12,7 +12,7 @@ to balance between performance and quality
 */ 
 "use strict";
 
-const JeelizResizer = (function(){
+window.JeelizResizer = (function(){
   //private vars :
   var _domCanvas, _whCanvasPx, _resizeAttemptsCounter=0, _overSamplingFactor=1, _isFullScreen=false, _timerFullScreen=false, _callbackResize=false;
   const _cameraResolutions=[ //all resolutions should be in landscape mode
@@ -186,7 +186,7 @@ const JeelizResizer = (function(){
 
       //launch the callback function after a small interval to let it
       //some time to size
-      setTimeout(options.callback.bind(null, false, bestCameraResolution), 1);
+      options.callback.bind(null, false, bestCameraResolution)();
     }, //end size_canvas()
 
     resize_canvas: function(){ //should be called if the canvas is resized to update the canvas resolution
