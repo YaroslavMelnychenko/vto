@@ -1,7 +1,4 @@
 {
     "/dist/js/example.js": "/dist/js/example.js",
-    "/dist/js/example.js.map": "/dist/js/example.js.map",
-    "/dist/js/vto.js": "/dist/js/vto.js",
-    "/dist/css/style.css": "/dist/css/style.css",
-    "/dist/js/vto.js.map": "/dist/js/vto.js.map"
+    "/dist/css/style.css": "/dist/css/style.css"
 }

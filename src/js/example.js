@@ -3,8 +3,6 @@ import VTO from './vto';
 var vt = new VTO({
     canvasSize: 'fullscreen'
 }).then((instance) => {
-    console.log(instance);
-
     var glasses = instance.createGlasses({
         envMapURL: "src/assets/envMap4.jpg",
         frameMeshURL: "src/assets/models3D/glassesFramesBranchesBent3.json",

@@ -6,6 +6,8 @@ require('./JeelizThreeGlassesCreator');
 
 'use strict'
 
+let path = 'node_modules/pinsel-vto/';
+
 let green = (text) => {
     console.log("%c" + text, "color:green;");
 }
@@ -134,7 +136,7 @@ class VTO {
                 videoSettings: $this.videoSettings,
                 followZRot: true,
                 canvas: $this.canvas,
-                NNCpath: 'src/nnc/jeefitNNC.json',
+                NNCpath: path + 'src/nnc/jeefitNNC.json',
                 maxFacesDetected: 1,
 
                 onWebcamAsk: $this.options.onWebcamAsk,
@@ -240,7 +242,7 @@ class VTO {
             envMapURL: options.envMapURL,
             frameMeshURL: options.frameMeshURL,
             lensesMeshURL: options.lensesMeshURL,
-            occluderURL: "src/assets/models3D/face.json",
+            occluderURL: path + "src/assets/models3D/face.json",
             material: options.material
         }, this.options.showOccluder);
 
