@@ -1,25 +1,11 @@
-import VTO from './index';
-
-var i = 0;
+import VTO from './vto';
 
 var vt = new VTO({
-    canvasId: 'canvas',
-    canvasSize: 'auto',
-    debug: true,
-    detectCallback: (faceIndex, isDetected) => {
-        
-    },
-    webcamAskCallback: function() {
-        
-    },
-    webcamGetCallback: function(videoElement) {
-        
-    }
-});
+    canvasSize: 'fullscreen'
+}).then((instance) => {
+    console.log(instance);
 
-vt.then((instance) => {
-
-    var glasses = instance.glassCreator({
+    var glasses = instance.createGlasses({
         envMapURL: "src/assets/envMap4.jpg",
         frameMeshURL: "src/assets/models3D/glassesFramesBranchesBent3.json",
         lensesMeshURL: "src/assets/models3D/glassesLenses3.json",
@@ -33,12 +19,10 @@ vt.then((instance) => {
     instance.addMesh(glasses);
 
     document.getElementById('shot').addEventListener('click', () => {
-        i++;
-        instance.takeShot('IMG' + i).click();
+        instance.makeShot('name');
     });
 
     window.addEventListener('resize', () => {
-        instance.resize('auto');
+        instance.resize('fullscreen');
     });
-
 });

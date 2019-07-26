@@ -9,7 +9,7 @@
        * <string> occluderURL: url of the occluder
 */
 
-window.JeelizThreeGlassesCreator=function(spec){
+window.JeelizThreeGlassesCreator=function(spec, debug){
     const threeGlasses=new THREE.Object3D();
     
     //enMap texture
@@ -70,7 +70,7 @@ window.JeelizThreeGlassesCreator=function(spec){
         threeGlasses.add(glassesLensesMesh);
     });
 
-    const occluderMesh = THREE.JeelizHelper.create_threejsOccluder(spec.occluderURL);
+    const occluderMesh = THREE.JeelizHelper.create_threejsOccluder(spec.occluderURL, null, debug);
     
     return {
         glasses: threeGlasses,

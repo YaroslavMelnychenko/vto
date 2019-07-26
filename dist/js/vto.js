@@ -81,7 +81,7 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 1);
+/******/ 	return __webpack_require__(__webpack_require__.s = 0);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -191,18 +191,6 @@ eval("/*\r\n  Helper for Three.js\r\n*/\n\n\nwindow.THREE.JeelizHelper = functio
 
 /***/ }),
 
-/***/ "./src/js/example.js":
-/*!***************************!*\
-  !*** ./src/js/example.js ***!
-  \***************************/
-/*! no exports provided */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _vto__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./vto */ \"./src/js/vto.js\");\n\nvar vt = new _vto__WEBPACK_IMPORTED_MODULE_0__[\"default\"]({\n  canvasSize: 'fullscreen'\n}).then(function (instance) {\n  console.log(instance);\n  var glasses = instance.createGlasses({\n    envMapURL: \"src/assets/envMap4.jpg\",\n    frameMeshURL: \"src/assets/models3D/glassesFramesBranchesBent3.json\",\n    lensesMeshURL: \"src/assets/models3D/glassesLenses3.json\",\n    material: new THREE.MeshPhongMaterial({\n      color: 0x000000,\n      specular: 0x2b2b2b,\n      shininess: 25\n    })\n  });\n  instance.addMesh(glasses);\n  document.getElementById('shot').addEventListener('click', function () {\n    instance.makeShot('name');\n  });\n  window.addEventListener('resize', function () {\n    instance.resize('fullscreen');\n  });\n});//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vLi9zcmMvanMvZXhhbXBsZS5qcz84MmEwIl0sIm5hbWVzIjpbInZ0IiwiVlRPIiwiY2FudmFzU2l6ZSIsInRoZW4iLCJpbnN0YW5jZSIsImNvbnNvbGUiLCJsb2ciLCJnbGFzc2VzIiwiY3JlYXRlR2xhc3NlcyIsImVudk1hcFVSTCIsImZyYW1lTWVzaFVSTCIsImxlbnNlc01lc2hVUkwiLCJtYXRlcmlhbCIsIlRIUkVFIiwiTWVzaFBob25nTWF0ZXJpYWwiLCJjb2xvciIsInNwZWN1bGFyIiwic2hpbmluZXNzIiwiYWRkTWVzaCIsImRvY3VtZW50IiwiZ2V0RWxlbWVudEJ5SWQiLCJhZGRFdmVudExpc3RlbmVyIiwibWFrZVNob3QiLCJ3aW5kb3ciLCJyZXNpemUiXSwibWFwcGluZ3MiOiJBQUFBO0FBQUE7QUFBQTtBQUVBLElBQUlBLEVBQUUsR0FBRyxJQUFJQyw0Q0FBSixDQUFRO0FBQ2JDLFlBQVUsRUFBRTtBQURDLENBQVIsRUFFTkMsSUFGTSxDQUVELFVBQUNDLFFBQUQsRUFBYztBQUNsQkMsU0FBTyxDQUFDQyxHQUFSLENBQVlGLFFBQVo7QUFFQSxNQUFJRyxPQUFPLEdBQUdILFFBQVEsQ0FBQ0ksYUFBVCxDQUF1QjtBQUNqQ0MsYUFBUyxFQUFFLHdCQURzQjtBQUVqQ0MsZ0JBQVksRUFBRSxxREFGbUI7QUFHakNDLGlCQUFhLEVBQUUseUNBSGtCO0FBSWpDQyxZQUFRLEVBQUUsSUFBSUMsS0FBSyxDQUFDQyxpQkFBVixDQUE0QjtBQUNsQ0MsV0FBSyxFQUFFLFFBRDJCO0FBRWxDQyxjQUFRLEVBQUUsUUFGd0I7QUFHbENDLGVBQVMsRUFBRTtBQUh1QixLQUE1QjtBQUp1QixHQUF2QixDQUFkO0FBV0FiLFVBQVEsQ0FBQ2MsT0FBVCxDQUFpQlgsT0FBakI7QUFFQVksVUFBUSxDQUFDQyxjQUFULENBQXdCLE1BQXhCLEVBQWdDQyxnQkFBaEMsQ0FBaUQsT0FBakQsRUFBMEQsWUFBTTtBQUM1RGpCLFlBQVEsQ0FBQ2tCLFFBQVQsQ0FBa0IsTUFBbEI7QUFDSCxHQUZEO0FBSUFDLFFBQU0sQ0FBQ0YsZ0JBQVAsQ0FBd0IsUUFBeEIsRUFBa0MsWUFBTTtBQUNwQ2pCLFlBQVEsQ0FBQ29CLE1BQVQsQ0FBZ0IsWUFBaEI7QUFDSCxHQUZEO0FBR0gsQ0F6QlEsQ0FBVCIsImZpbGUiOiIuL3NyYy9qcy9leGFtcGxlLmpzLmpzIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IFZUTyBmcm9tICcuL3Z0byc7XHJcblxyXG52YXIgdnQgPSBuZXcgVlRPKHtcclxuICAgIGNhbnZhc1NpemU6ICdmdWxsc2NyZWVuJ1xyXG59KS50aGVuKChpbnN0YW5jZSkgPT4ge1xyXG4gICAgY29uc29sZS5sb2coaW5zdGFuY2UpO1xyXG5cclxuICAgIHZhciBnbGFzc2VzID0gaW5zdGFuY2UuY3JlYXRlR2xhc3Nlcyh7XHJcbiAgICAgICAgZW52TWFwVVJMOiBcInNyYy9hc3NldHMvZW52TWFwNC5qcGdcIixcclxuICAgICAgICBmcmFtZU1lc2hVUkw6IFwic3JjL2Fzc2V0cy9tb2RlbHMzRC9nbGFzc2VzRnJhbWVzQnJhbmNoZXNCZW50My5qc29uXCIsXHJcbiAgICAgICAgbGVuc2VzTWVzaFVSTDogXCJzcmMvYXNzZXRzL21vZGVsczNEL2dsYXNzZXNMZW5zZXMzLmpzb25cIixcclxuICAgICAgICBtYXRlcmlhbDogbmV3IFRIUkVFLk1lc2hQaG9uZ01hdGVyaWFsKHtcclxuICAgICAgICAgICAgY29sb3I6IDB4MDAwMDAwLCAgICBcclxuICAgICAgICAgICAgc3BlY3VsYXI6IDB4MmIyYjJiLFxyXG4gICAgICAgICAgICBzaGluaW5lc3M6IDI1XHJcbiAgICAgICAgfSlcclxuICAgIH0pO1xyXG5cclxuICAgIGluc3RhbmNlLmFkZE1lc2goZ2xhc3Nlcyk7XHJcblxyXG4gICAgZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoJ3Nob3QnKS5hZGRFdmVudExpc3RlbmVyKCdjbGljaycsICgpID0+IHtcclxuICAgICAgICBpbnN0YW5jZS5tYWtlU2hvdCgnbmFtZScpO1xyXG4gICAgfSk7XHJcblxyXG4gICAgd2luZG93LmFkZEV2ZW50TGlzdGVuZXIoJ3Jlc2l6ZScsICgpID0+IHtcclxuICAgICAgICBpbnN0YW5jZS5yZXNpemUoJ2Z1bGxzY3JlZW4nKTtcclxuICAgIH0pO1xyXG59KTsiXSwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///./src/js/example.js\n");
-
-/***/ }),
-
 /***/ "./src/js/jeelizFaceFilter.js":
 /*!************************************!*\
   !*** ./src/js/jeelizFaceFilter.js ***!
@@ -226,14 +214,26 @@ eval("__webpack_require__.r(__webpack_exports__);\nfunction _typeof(obj) { if (t
 
 /***/ }),
 
-/***/ 1:
-/*!*********************************!*\
-  !*** multi ./src/js/example.js ***!
-  \*********************************/
+/***/ "./src/sass/style.sass":
+/*!*****************************!*\
+  !*** ./src/sass/style.sass ***!
+  \*****************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("// removed by extract-text-webpack-plugin//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vLi9zcmMvc2Fzcy9zdHlsZS5zYXNzP2YwMWIiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUEiLCJmaWxlIjoiLi9zcmMvc2Fzcy9zdHlsZS5zYXNzLmpzIiwic291cmNlc0NvbnRlbnQiOlsiLy8gcmVtb3ZlZCBieSBleHRyYWN0LXRleHQtd2VicGFjay1wbHVnaW4iXSwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///./src/sass/style.sass\n");
+
+/***/ }),
+
+/***/ 0:
+/*!***************************************************!*\
+  !*** multi ./src/js/vto.js ./src/sass/style.sass ***!
+  \***************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\OSPanel\domains\vto\src\js\example.js */"./src/js/example.js");
+__webpack_require__(/*! C:\OSPanel\domains\vto\src\js\vto.js */"./src/js/vto.js");
+module.exports = __webpack_require__(/*! C:\OSPanel\domains\vto\src\sass\style.sass */"./src/sass/style.sass");
 
 
 /***/ })

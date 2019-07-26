@@ -1,6 +1,6 @@
 const mix = require('laravel-mix');
 
-mix .js('src/js/index.js', 'dist/js')
+mix .js('src/js/vto.js', 'dist/js')
     .sourceMaps();
 
 mix .js('src/js/example.js', 'dist/js')

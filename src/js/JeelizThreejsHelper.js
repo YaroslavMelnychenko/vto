@@ -313,15 +313,27 @@ window.THREE.JeelizHelper=(function(){
     },
 
     //create an occluder, IE a transparent object which writes on the depth buffer
-    create_threejsOccluder: function(occluderURL, callback){
+    create_threejsOccluder: function(occluderURL, callback, debug){
       const occluderMesh=new THREE.Mesh();
       new THREE.BufferGeometryLoader().load(occluderURL, function(occluderGeometry){
-        const mat=new THREE.ShaderMaterial({
-          vertexShader: THREE.ShaderLib.basic.vertexShader,
-          fragmentShader: "precision lowp float;\n void main(void){\n gl_FragColor=vec4(1.,0.,0.,1.);\n }",
-          uniforms: THREE.ShaderLib.basic.uniforms,
-          colorWrite: false
-        });
+
+      var mat;
+
+        if(debug){
+          mat = new THREE.MeshBasicMaterial({
+            wireframe: true,
+            transparent: true,
+            opacity: .25
+          });
+        } else {
+          mat = new THREE.ShaderMaterial({
+            vertexShader: THREE.ShaderLib.basic.vertexShader,
+            fragmentShader: "precision lowp float;\n void main(void){\n gl_FragColor=vec4(1.,0.,0.,1.);\n }",
+            uniforms: THREE.ShaderLib.basic.uniforms,
+            colorWrite: false
+          });
+        }
+
         //occluderGeometry.computeVertexNormals(); mat=new THREE.MeshNormalMaterial({side: THREE.DoubleSide});
         occluderMesh.renderOrder=-1; //render first
         occluderMesh.material=mat;
