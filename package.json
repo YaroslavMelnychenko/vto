@@ -2,7 +2,7 @@
   "name": "pinsel-vto",
   "version": "0.2.0",
   "description": "A virtual try-on helper for your every-day projects",
-  "main": "dist/js/vto.js",
+  "main": "src/js/vto.js",
   "scripts": {
     "dev": "npm run development",
     "development": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
