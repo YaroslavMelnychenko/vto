@@ -70,7 +70,7 @@ class VTO {
         if(typeof(this.options.canvasSize) == 'object') {
 
             this.canvas.width = this.options.canvasSize[0];
-            this.canvas.height = this.options.canvasSize[0];
+            this.canvas.height = this.options.canvasSize[1];
 
             debugSize = this.options.canvasSize[0] + 'x' + this.options.canvasSize[1];
 
