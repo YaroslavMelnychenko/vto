@@ -14,7 +14,7 @@ window.THREE.JeelizHelper=(function(){
 
     tweakMoveYRotateY: 0.5, //tweak value: move detection window along Y axis when rotate the face
     
-    isDebugPivotPoint: false //display a small cube for the pivot point
+    isDebugPivotPoint: true //display a small cube for the pivot point
   };
 
   //private vars :
