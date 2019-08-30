@@ -39,6 +39,7 @@ class VTO {
         this.options.onPauseToggled = options.onPauseToggled || this._onPauseToggled;
 
         this._isPaused = false;
+        this.options.useAlerts = options.useAlerts || false;
 
     }
 
@@ -84,7 +85,11 @@ class VTO {
         }
 
         if(this.options.debug) {
-            console.log('%ccanvas current size is - %c%s', 'color:green;', 'color:orange;', debugSize);
+            if(this.options.useAlerts) {
+                alert('canvas current size is - ' + debugSize);
+            } else {
+                console.log('%ccanvas current size is - %c%s', 'color:green;', 'color:orange;', debugSize);
+            }
         }
 
         return new Promise((resolve) => {
@@ -95,7 +100,11 @@ class VTO {
 
                     if($this.options.debug) {
                         green('JeelizResizer is ready');
-                        console.log('%cJeelizResizer recommend canvas size - %c%s', 'color:green;', 'color:orange;', bestVideoSettings.idealWidth + 'x' + bestVideoSettings.idealHeight);
+                        if($this.options.useAlerts) {
+                            alert('JeelizResizer recommend canvas size - ' + bestVideoSettings.idealWidth + 'x' + bestVideoSettings.idealHeight);
+                        } else {
+                            console.log('%cJeelizResizer recommend canvas size - %c%s', 'color:green;', 'color:orange;', bestVideoSettings.idealWidth + 'x' + bestVideoSettings.idealHeight);
+                        }
                     }
 
                     if(isError) {
