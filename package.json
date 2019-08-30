@@ -1,6 +1,6 @@
 {
   "name": "pinsel-vto",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "A virtual try-on helper for your every-day projects",
   "main": "src/js/vto.js",
   "scripts": {
