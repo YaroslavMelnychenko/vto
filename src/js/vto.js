@@ -4,6 +4,9 @@ require('./JeelizThreejsHelper');
 require('./JeelizResizer');
 require('./JeelizThreeGlassesCreator');
 
+var nnc = 'https://res.cloudinary.com/pinsel-studio/raw/upload/v1568367574/jeefitNNC_cfuzgp.json';
+var face = 'https://res.cloudinary.com/pinsel-studio/raw/upload/v1568367680/face_abh1rb.json';
+
 'use strict'
 
 let path = 'node_modules/pinsel-vto/';
@@ -145,7 +148,7 @@ class VTO {
                 videoSettings: $this.videoSettings,
                 followZRot: true,
                 canvas: $this.canvas,
-                NNCpath: path + 'src/nnc/jeefitNNC.json',
+                NNCpath: nnc,
                 maxFacesDetected: 1,
 
                 onWebcamAsk: $this.options.onWebcamAsk,
@@ -251,7 +254,7 @@ class VTO {
             envMapURL: options.envMapURL,
             frameMeshURL: options.frameMeshURL,
             lensesMeshURL: options.lensesMeshURL,
-            occluderURL: path + "src/assets/models3D/face.json",
+            occluderURL: face,
             material: options.material
         }, this.options.showOccluder);
 
